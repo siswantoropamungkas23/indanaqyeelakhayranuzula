@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indanaqyeela | Personal Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:italic,wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDFBF7;
+        }
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar halus ala jurnal santai */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E5E0D8;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="text-[#3A4D39] min-h-screen pb-32 selection:bg-[#739072] selection:text-white">
+
+    <header class="max-w-3xl mx-auto px-6 pt-12 pb-6 flex justify-between items-center border-b border-[#E6E0D4]">
+        <div>
+            <h1 class="text-xs tracking-[0.2em] font-bold text-[#739072] uppercase">Personal Space</h1>
+            <p class="text-xl font-extrabold tracking-tight mt-0.5">Indanaqyeela K. N.</p>
+        </div>
+        <div class="text-right">
+            <span class="text-[10px] text-[#A2A49F] block font-mono">EST. 2026</span>
+            <span class="text-xs italic serif-font text-[#4F6F52]">just being myself.</span>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 mt-8">
+        
+        <div id="section-home" class="journal-section hidden space-y-6">
+            <div class="bg-[#F3EFE6] p-6 rounded-2xl border border-[#E6E0D4] space-y-4">
+                <div class="inline-block bg-[#739072] text-[#FDFBF7] text-[10px] font-bold tracking-wider px-3 py-1 rounded-full uppercase">
+                    ✨ Welcome Wanderer
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-light tracking-tight text-[#2C3E2B]">
+                    Hai! Aku <span class="serif-font font-semibold italic">Indanaqyeela</span>, selamat datang di jurnal digital kecilku.
+                </h2>
+                <p class="text-sm text-[#4F6F52] leading-relaxed">
+                    Tempat aku menaruh potongan cerita, catatan sekolah, playlist yang nemenin hari-hariku, dan hal-hal estetik yang aku sukai. Semoga betah keliling di sini ya!
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-[#E6E0D4] shadow-sm space-y-3">
+                <h3 class="text-xs font-bold tracking-wider text-[#739072] uppercase">How's My Mood Today?</h3>
+                <p class="text-xs text-[#8F908C]">Klik salah satu emoji di bawah untuk menggambarkan perasaanku sekarang:</p>
+                <div class="flex gap-2 pt-1">
+                    <button onclick="changeMood('😊 Happy Vibes', this)" class="mood-btn flex-1 py-2 rounded-xl bg-[#FDFBF7] border border-[#E6E0D4] text-sm hover:bg-[#F3EFE6] transition">😊</button>
+                    <button onclick="changeMood('☕ Cozy & Chill', this)" class="mood-btn flex-1 py-2 rounded-xl bg-[#FDFBF7] border border-[#E6E0D4] text-sm hover:bg-[#F3EFE6] transition">☕</button>
+                    <button onclick="changeMood('📚 Productive Mode', this)" class="mood-btn flex-1 py-2 rounded-xl bg-[#FDFBF7] border border-[#E6E0D4] text-sm hover:bg-[#F3EFE6] transition">📚</button>
+                    <button onclick="changeMood('🌙 Sleepy Head', this)" class="mood-btn flex-1 py-2 rounded-xl bg-[#FDFBF7] border border-[#E6E0D4] text-sm hover:bg-[#F3EFE6] transition">🌙</button>
+                </div>
+                <div class="bg-[#FDFBF7] p-3 rounded-xl border border-[#E6E0D4] text-center mt-2">
+                    <span class="text-xs font-semibold text-[#4F6F52]">Current Status: <span id="mood-status" class="italic font-normal">☕ Cozy & Chill</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-journal" class="journal-section hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-[#E6E0D4] shadow-sm space-y-4">
+                <div class="border-b border-[#E6E0D4] pb-2 flex justify-between items-center">
+                    <h3 class="font-bold text-sm text-[#2C3E2B]">🌿 Catatan Belajar: Ekosistem</h3>
+                    <span class="text-[10px] font-mono bg-[#F3EFE6] px-2 py-0.5 rounded text-[#739072]">Biologi</span>
+                </div>
+                <div class="space-y-3 text-xs sm:text-sm text-[#4F6F52] leading-relaxed">
+                    <p class="font-semibold text-[#2C3E2B]">Komponen Pembentuk Ekosistem:</p>
+                    <ul class="list-none space-y-2 pl-1">
+                        <li class="flex items-start gap-2">
+                            <span class="text-[#739072] mt-1">🌱</span>
+                            <div><strong>Biotik:</strong> Segala makhluk hidup yang ada di lingkungan (Manusia, Hewan, Tumbuhan, Mikroorganisme).</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-[#739072] mt-1">☀️</span>
+                            <div><strong>Abiotik:</strong> Komponen tak hidup yang memengaruhi kelangsungan hidup (Cahaya matahari, Suhu, Air, Tanah, Udara).</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-[#F3EFE6] p-6 rounded-2xl border border-[#E6E0D4] space-y-3">
+                <h3 class="font-bold text-sm text-[#2C3E2B] serif-font italic">Daily Self-Care Reminder</h3>
+                <div class="space-y-2 text-xs text-[#4F6F52]">
+                    <label class="flex items-center gap-3 cursor-pointer p-1.5 hover:bg-white/40 rounded-lg transition">
+                        <input type="checkbox" checked class="rounded accent-[#739072]"> Minum air putih cukup (minimal 2 liter sehari).
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer p-1.5 hover:bg-white/40 rounded-lg transition">
+                        <input type="checkbox" class="rounded accent-[#739072]"> Jangan terlalu lama natap layar, istirahatin mata 20 detik.
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer p-1.5 hover:bg-white/40 rounded-lg transition">
+                        <input type="checkbox" class="rounded accent-[#739072]"> Kurangi dengerin lagu galau pas lagi belajar tugas sulit!
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-[#F3EFE6]" class="journal-section hidden space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-[#E6E0D4] shadow-sm space-y-3">
+                    <div class="aspect-square bg-[#F3EFE6] rounded-lg flex flex-col items-center justify-center border border-[#E6E0D4]/60 p-4 text-center">
+                        <span class="text-3xl mb-1">🎵</span>
+                        <p class="font-bold text-xs text-[#2C3E2B]">Lofi Cafe Beats</p>
+                        <p class="text-[10px] text-[#A2A49F] italic mt-0.5">Perfect for rainy days</p>
+                    </div>
+                    <div class="text-center pt-1">
+                        <a href="https://www.youtube.com/results?search_query=lofi+cafe+aesthetic" target="_blank" class="text-xs font-bold text-[#739072] hover:underline">
+                            Dengarkan di YouTube ↗
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-[#E6E0D4] shadow-sm space-y-3">
+                    <div class="aspect-square bg-[#F3EFE6] rounded-lg flex flex-col items-center justify-center border border-[#E6E0D4]/60 p-4 text-center">
+                        <span class="text-3xl mb-1">📚</span>
+                        <p class="font-bold text-xs text-[#2C3E2B]">Aesthetic Books</p>
+                        <p class="text-[10px] text-[#A2A49F] italic mt-0.5">"Romanticizing life essays"</p>
+                    </div>
+                    <div class="text-center pt-1">
+                        <a href="https://www.youtube.com/results?search_query=aesthetic+book+recommendations" target="_blank" class="text-xs font-bold text-[#739072] hover:underline">
+                            Lihat Rekomendasi ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-[#E6E0D4] shadow-xl flex gap-1 z-50 w-[90%] max-w-xs justify-between">
+        <button onclick="switchTab('home')" id="nav-home" class="flex flex-col items-center justify-center flex-1 py-1.5 rounded-full transition text-xs font-medium">
+            <span class="text-base mb-0.5">🏠</span>
+            <span>Home</span>
+        </button>
+        <button onclick="switchTab('journal')" id="nav-journal" class="flex flex-col items-center justify-center flex-1 py-1.5 rounded-full transition text-xs font-medium">
+            <span class="text-base mb-0.5">📖</span>
+            <span>Notes</span>
+        </button>
+        <button onclick="switchTab('favorites')" id="nav-favorites" class="flex flex-col items-center justify-center flex-1 py-1.5 rounded-full transition text-xs font-medium">
+            <span class="text-base mb-0.5">✨</span>
+            <span>Favs</span>
+        </button>
+    </nav>
+
+    <footer class="text-center py-8 text-[10px] text-[#A2A49F] tracking-widest mt-12">
+        <p>INDANAQYEELA KHAYRA NUZULA © 2026</p>
+    </footer>
+
+    <script>
+        // State awal halaman aktif
+        let activeTab = 'home';
+
+        function switchTab(tabId) {
+            activeTab = tabId;
+
+            // 1. Sembunyikan seluruh section halaman jurnal
+            const sections = document.querySelectorAll('.journal-section');
+            sections.forEach(s => s.style.display = 'none');
+
+            // 2. Munculkan section yang dipilih secara tepat
+            // Proteksi nama ID dinamis untuk tab favorites/favs
+            let targetId = `section-${tabId}`;
+            if (tabId === 'favorites') { targetId = 'section-[#F3EFE6]'; }
+            
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+
+            // 3. Reset total seluruh gaya tombol navbar melayang
+            const allNavIds = ['nav-home', 'nav-journal', 'nav-favorites'];
+            allNavIds.forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) {
+                    btn.className = "flex flex-col items-center justify-center flex-1 py-1.5 rounded-full transition text-xs font-medium text-[#8F908C] hover:text-[#3A4D39]";
+                }
+            });
+
+            // 4. Berikan highlight warna Sage aktif pada tombol yang sedang diklik
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "flex flex-col items-center justify-center flex-1 py-1.5 rounded-full transition text-xs font-bold bg-[#739072] text-[#FDFBF7] shadow-sm";
+            }
+        }
+
+        // Fitur Kustomisasi Interaktif Baru: Mood Tracker
+        function changeMood(moodText, element) {
+            document.getElementById('mood-status').innerText = moodText;
+            
+            // Beri efek feedback visual kilat pada tombol yang diklik
+            const allMoodBtns = document.querySelectorAll('.mood-btn');
+            allMoodBtns.forEach(btn => btn.style.borderColor = '#E6E0D4');
+            element.style.borderColor = '#739072';
+        }
+
+        // Eksekusi otomatis begitu web terpasang sempurna di layar HP/Laptop temenmu
+        document.addEventListener("DOMContentLoaded", function() {
+            switchTab('home');
+        });
+    </script>
+</body>
+</html>
